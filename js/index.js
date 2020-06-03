@@ -18,13 +18,14 @@ const colors = [
   "darkslateblue",
   "chocolate",
 ];
+
 //Added search box at top
 newInput.id = "search";
 nav.appendChild(newInput);
 
 ///////// AddEventListeners Below //////////
 
-//Searchbox Keydown & Keyup
+//1 & 2. Searchbox Keydown & Keyup
 newInput.addEventListener("keydown", () => {
   newInput.style.backgroundColor = "yellow";
 });
@@ -32,7 +33,7 @@ newInput.addEventListener("keyup", () => {
   newInput.style.backgroundColor = "pink";
 });
 
-//Top Nav Mouseout & Mouseover
+//3 & 4. Top Nav Mouseout & Mouseover
 navLinks.forEach((element) => {
   element.addEventListener("mouseover", (event) => {
     element.style.color = "hotpink";
@@ -45,17 +46,17 @@ navLinks.forEach((element) => {
   });
 
   element.addEventListener("click", (event) => {
-    event.preventDefault();
+    event.preventDefault(); //PREVENT DEFAULT
   });
 });
 
-//Bottom Button One Double Click
+//5. Bottom Button One Double Click
 bottomBtns[0].textContent = "Double Click Me";
 bottomBtns[0].addEventListener("dblclick", () => {
   alert("Yay you double clicked!");
 });
 
-//Bottom Button Two Click
+//6. Bottom Button Two Click
 bottomBtns[1].textContent = "Random Theme";
 bottomBtns[1].addEventListener("click", () => {
   let random = Math.floor(Math.random() * colors.length);
@@ -64,9 +65,8 @@ bottomBtns[1].addEventListener("click", () => {
   logo.style.color = "black";
 });
 
-//Bottom Button Three Wheel Zoom
+//7. Bottom Button Three Wheel Zoom
 bottomBtns[2].textContent = "Mouse Wheel Me";
-
 let scale = 1;
 function zoom(event) {
   event.preventDefault();
@@ -74,10 +74,9 @@ function zoom(event) {
   scale = Math.min(Math.max(0.1, scale), 2);
   bottomBtns[2].style.transform = `scale(${scale})`;
 }
-
 bottomBtns[2].addEventListener("wheel", zoom);
 
-//DragStart DragEnd middle Image
+//8 & 9. DragStart DragEnd middle Image
 midImg.className = "fill";
 const fill = document.querySelector(".fill");
 
@@ -93,7 +92,7 @@ function dragEnd() {
   this.className = "fill";
 }
 
-//MouseEnter First H2 Element
+//10. MouseEnter First H2 Element
 allH2[0].addEventListener("mouseenter", slide);
 function slide() {
   allH2[0].style.transform = "translateX(250px)";
