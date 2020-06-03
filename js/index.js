@@ -43,6 +43,10 @@ navLinks.forEach((element) => {
     element.style.color = "black";
     element.style.transform = "scale(1)";
   });
+
+  element.addEventListener("click", (event) => {
+    event.preventDefault();
+  });
 });
 
 //Bottom Button One Double Click
@@ -89,17 +93,9 @@ function dragEnd() {
   this.className = "fill";
 }
 
-//MouseEnter
+//MouseEnter First H2 Element
 allH2[0].addEventListener("mouseenter", slide);
-// allH2[1].addEventListener("mouseenter", slide);
 function slide() {
   allH2[0].style.transform = "translateX(250px)";
   allH2[0].style.transition = "3s";
 }
-
-// allH2.forEach((element) => {
-//   element.addEventListener("mouseenter", (event) => {
-//     element.style.transform = "translateX(250px)";
-//     element.style.transition = "3s";
-//   });
-// });
